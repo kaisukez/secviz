@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Data = styled.div`
+const LoginActivityFrame = styled.div`
   background-color: #FEFEFE;
   width: 100%;
   height: 100%;
@@ -12,4 +12,4 @@ const Data = styled.div`
   grid-template-rows: repeat(5, 1fr);
 `
 
-export default Data
+export default LoginActivityFrame

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import ReactEcharts from 'echarts-for-react'
 
-import DataFrame from './styled/DataFrame'
+import LoginActivityFrame from './styled/LoginActivityFrame'
 import getUserData from '../get-data/login-activity/getUserData'
 import getLoginLogoutData from '../get-data/login-activity/getLoginLogoutData'
 import getIpTypeData from '../get-data/login-activity/getIpTypeData'
@@ -14,7 +14,7 @@ import getServerDistributionData
 
 const ActiveUserFormat = styled.div`
   width: 100%;
-  height: 100%;
+  height: 300px;
   grid-column-start: 1;
   grid-column-end: 3;
 `
@@ -56,26 +56,44 @@ const ServerDistributionFormat = styled.div`
 
 const LoginActivity = props => {
   return (
-    <DataFrame>
+    <LoginActivityFrame>
       <ActiveUserFormat>
-        <ReactEcharts option={ getUserData() } />
+        <ReactEcharts
+          option={ getUserData() }
+          style={ { height: '100%' } }
+        />
       </ActiveUserFormat>
       <IpTypeFormat>
-        <ReactEcharts option={ getIpTypeData() } />
+        <ReactEcharts
+          option={ getIpTypeData() }
+          style={ { height: '100%' } }
+        />
       </IpTypeFormat>
       <LoginLogoutFormat>
-        <ReactEcharts option={ getLoginLogoutData() } />
+        <ReactEcharts
+          option={ getLoginLogoutData() }
+          style={ { height: '100%' } }
+        />
       </LoginLogoutFormat>
       <IpRatioFormat>
-        <ReactEcharts option={ getIpRatioData() } />
+        <ReactEcharts
+          option={ getIpRatioData() }
+          style={ { height: '100%' } }
+        />
       </IpRatioFormat>
       <LoginActivityFormat>
-        <ReactEcharts option={ getLoginActivityData() } />
+        <ReactEcharts
+          option={ getLoginActivityData() }
+          style={ { height: '100%' } }
+        />
       </LoginActivityFormat>
       <ServerDistributionFormat>
-        <ReactEcharts option={ getServerDistributionData() } />
+        <ReactEcharts
+          option={ getServerDistributionData() }
+          style={ { height: '100%' } }
+        />
       </ServerDistributionFormat>
-    </DataFrame>
+    </LoginActivityFrame>
   )
 }
 
