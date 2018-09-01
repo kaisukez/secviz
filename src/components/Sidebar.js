@@ -5,8 +5,11 @@ import StyledSidebar from './styled/Sidebar'
 export default (props) => {
   return (
     <StyledSidebar>
+      <div onClick={ () => props.changePage('domestic-graph') }>
+        Domestic Internet Graph
+      </div>
       <div onClick={ () => props.changePage('international-graph') }>
-        International Graph
+        International Internet Graph
       </div>
       <div onClick={ () => props.changePage('login-activity') }>
         Login Activity

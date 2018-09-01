@@ -2,18 +2,18 @@ import React from 'react'
 import ReactEcharts from 'echarts-for-react'
 
 import GraphFrame from './styled/GraphFrame'
-import getInternationalGraphData
-  from '../get-data/internet-graph/getInternationalGraphData'
+import getDomesticGraphData
+  from '../get-data/internet-graph/getDomesticGraphData'
 
-const InternationalGraph = props => {
+const DomesticGraph = props => {
   return (
     <GraphFrame>
       <ReactEcharts
-        option={ getInternationalGraphData() }
+        option={ getDomesticGraphData() }
         style={ { height: '100%' } }
       />
     </GraphFrame>
   )
 }
 
-export default InternationalGraph
+export default DomesticGraph

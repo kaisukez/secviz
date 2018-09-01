@@ -5,12 +5,13 @@ import Navbar from '../components/Navbar'
 import Sidebar from '../components/Sidebar'
 import LoginActivity from '../components/LoginActivity'
 import InternationalGraph from '../components/InternationalGraph'
+import DomesticGraph from '../components/DomesticGraph'
 
 class Dashboard extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      page: 'login-activity'
+      page: 'domestic-graph'
     }
   }
 
@@ -20,12 +21,14 @@ class Dashboard extends Component {
 
   renderPage = () => {
     switch (this.state.page) {
-      case 'login-activity':
-        return <LoginActivity />
+      case 'domestic-graph':
+        return <DomesticGraph />
       case 'international-graph':
         return <InternationalGraph />
-      default:
+      case 'login-activity':
         return <LoginActivity />
+      default:
+        return <DomesticGraph />
     }
   }
 

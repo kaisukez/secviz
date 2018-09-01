@@ -1,22 +1,25 @@
-import InternationalExchage
-  from '../../data/internet-graph/International_Exchange'
+import DomesticExchage
+  from '../../data/internet-graph/Domestic_Exchange'
 
 var category_from_isp_type = {
-  'ISP-Inter': 0,
+  'NIX': 0,
   'ISP-Local': 1,
   'ISP-Govt': 2,
-  'IIG': 3
+  'IIG': 3,
+  // 'Gov.': 4
 }
+
 var categories_list = [
-  { name: 'ISP-Inter', itemStyle: { color: '#0E91C9'} },
+  { name: 'NIX', itemStyle: { color: '#D775F0'} },
   { name: 'ISP-Local', itemStyle: { color: '#60D1AA'} },
   { name: 'ISP-Govt', itemStyle: { color: '#ED4747'} },
   { name: 'IIG', itemStyle: { color: '#DEDB7A'} },
+  // { name: 'Gov.', itemStyle: { color: '#E6F075'} },
 ]
 
-const getInternationalGraphData = () => ({
+const getDomesticGraphData = () => ({
   title: {
-      text: 'International Internet Graph',
+      text: 'Domestic Internet Graph',
       // text: 'Domestic Graph'
   },
   animationDurationUpdate: 1500,
@@ -27,11 +30,12 @@ const getInternationalGraphData = () => ({
   series : [
       {
           type: 'graph',
-          layout: 'circular',
+          layout: 'none',
           draggable: true,
           // progressiveThreshold: 700,
           categories: categories_list,
-          data: InternationalExchage.nodes.map(function (node) {
+          data: DomesticExchage.nodes.map(function (node) {
+            console.log(node.colorByType)
               return {
                   x: node.x,
                   y: node.y,
@@ -39,7 +43,7 @@ const getInternationalGraphData = () => ({
                   // name: node.label,
                   name: node.name,
                   category: category_from_isp_type[node.ispType],
-                  symbolSize: node.size,
+                  symbolSize: Number(node.size) * 3,
                   itemStyle: {
                       normal: {
                           color: node.colorByType
@@ -48,7 +52,7 @@ const getInternationalGraphData = () => ({
                   }
               };
           }),
-          edges: InternationalExchage.edges.map(function (edge) {
+          edges: DomesticExchage.edges.map(function (edge) {
               return {
                   source: edge.sourceID,
                   target: edge.targetID,
@@ -77,4 +81,4 @@ const getInternationalGraphData = () => ({
   ]
 })
 
-export default getInternationalGraphData
+export default getDomesticGraphData
