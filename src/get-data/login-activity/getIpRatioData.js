@@ -12,7 +12,6 @@ const getIpRatioData = () => ({
   series: {
     type: 'pie',
     radius: [30, 110],
-    center: ['75%', '50%'],
     roseType: 'radius',
     data: [
       { name: 'ipv4', value: ipv4Value },

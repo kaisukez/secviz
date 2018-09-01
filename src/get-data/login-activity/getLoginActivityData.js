@@ -13,7 +13,6 @@ const getLoginActivityData = () => ({
   series: {
     type: 'pie',
     radius: [30, 110],
-    center: ['75%', '50%'],
     roseType: 'radius',
     data: [
       { name: 'login', value: loginValue },

@@ -8,7 +8,6 @@ const getServerDistributionData = () => ({
   series: {
     type: 'pie',
     radius: [30, 110],
-    center: ['75%', '50%'],
     roseType: 'radius',
     data: [
       { name: "158.108.218.201", value: serverDistribution["158.108.218.201"] },
