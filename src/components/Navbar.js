@@ -1,6 +1,6 @@
 import React from 'react'
 
-import StyledNavbar from './styled-components/Navbar'
+import StyledNavbar from './styled/Navbar'
 
 export default (props) => {
   return (

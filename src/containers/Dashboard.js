@@ -1,41 +1,34 @@
 import React, { Component } from 'react'
 
-import Frame from '../components/styled-components/Frame'
+import DashboardFrame from './styled/DashboardFrame'
 import Navbar from '../components/Navbar'
 import Sidebar from '../components/Sidebar'
-import Data from '../components/Data'
-
-import login_count from '../login_times_sorted_count'
-import login_time from '../login_times_sorted_time'
+import LoginActivity from '../components/LoginActivity'
 
 class Dashboard extends Component {
   constructor(props) {
     super(props)
+    this.state = {
+      page: 'login-activity'
+    }
   }
 
-  getOption = () => {
-    return {
-      xAxis: {
-          type: 'category',
-          data: login_time.data
-      },
-      yAxis: {
-          type: 'value'
-      },
-      series: [{
-          type: 'bar',
-          data: login_count.data
-      }]
+  renderPage = () => {
+    switch (this.state.page) {
+      case 'login-activity':
+        return <LoginActivity />
+      default:
+        return <LoginActivity />
     }
   }
 
   render() {
     return (
-      <Frame>
+      <DashboardFrame>
         <Navbar />
         <Sidebar />
-        <Data getOption={ this.getOption() }/>
-      </Frame>
+        { this.renderPage() }
+      </DashboardFrame>
     )
   }
 }
