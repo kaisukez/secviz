@@ -36,7 +36,10 @@ class Dashboard extends Component {
     return (
       <DashboardFrame>
         <Navbar />
-        <Sidebar changePage={ this.changePage } />
+        <Sidebar
+          page={ this.state.page }
+          changePage={ this.changePage }
+        />
         { this.renderPage() }
       </DashboardFrame>
     )
