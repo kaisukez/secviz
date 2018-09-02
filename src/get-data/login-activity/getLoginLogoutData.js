@@ -10,6 +10,16 @@ const getLoginLogoutData = () => ({
     left: 'center',
     text: 'Login / Logout'
   },
+  tooltip: {
+    trigger: 'axis'
+  },
+  legend: {
+    data: [
+      { name: 'login' , icon: 'circle'},
+      { name: 'logout' , icon: 'circle'},
+    ],
+    top: 30
+  },
   xAxis: {
     type: 'category',
     data: dateList
@@ -20,17 +30,20 @@ const getLoginLogoutData = () => ({
   series: [
     {
       type: 'line',
-      data: loginValueList,
+      name: 'logout',
+      data: logoutValueList,
       stack: 'myStack',
       areaStyle: { normal: {} }
     },
     {
       type: 'line',
-      data: logoutValueList,
+      name: 'login',
+      data: loginValueList,
       stack: 'myStack',
       areaStyle: { normal: {} }
-    }
-  ]
+    },
+  ],
+  color: ['#40DCED', '#252B2B']
 })
 
 export default getLoginLogoutData

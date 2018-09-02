@@ -8,6 +8,19 @@ const getUserData = () => ({
     left: 'center',
     text: 'Active Users'
   },
+  tooltip: {
+    trigger: 'axis'
+  },
+  visualMap: {
+    show: false,
+    type: 'continuous',
+    seriesIndex: 0,
+    min: 0,
+    max: 200,
+    inRange: {
+        color: ['lightgrey', '#2E64B0', '#222222']
+    }
+  },
   xAxis: {
     type: 'category',
     data: dateList
@@ -17,8 +30,9 @@ const getUserData = () => ({
   },
   series: {
     type: 'line',
-    data: valueList
-  }
+    data: valueList,
+  },
+  // color: ['#31ABD4']
 })
 
 export default getUserData

@@ -10,6 +10,17 @@ const getIpTypeData = () => ({
     left: 'center',
     text: 'IP Type'
   },
+  tooltip: {
+    trigger: 'axis'
+  },
+  legend: {
+    data: [
+      { name: 'ipv4' , icon: 'circle'},
+      { name: 'dual stack' , icon: 'circle'},
+      { name: 'ipv6' , icon: 'circle'},
+    ],
+    top: 30
+  },
   xAxis: {
     type: 'category',
     data: dateList
@@ -20,23 +31,27 @@ const getIpTypeData = () => ({
   series: [
     {
       type: 'line',
-      data: ipv4ValueList,
-      stack: 'myStack',
-      areaStyle: { normal: {} }
-    },
-    {
-      type: 'line',
+      name: 'ipv6',
       data: ipv6ValueList,
       stack: 'myStack',
       areaStyle: { normal: {} }
     },
     {
       type: 'line',
+      name: 'dual stack',
       data: dualStackValueList,
       stack: 'myStack',
       areaStyle: { normal: {} }
     },
-  ]
+    {
+      type: 'line',
+      name: 'ipv4',
+      data: ipv4ValueList,
+      stack: 'myStack',
+      areaStyle: { normal: {} }
+    },
+  ],
+  color: ['red', 'lightgrey', 'darkblue']
 })
 
 export default getIpTypeData
