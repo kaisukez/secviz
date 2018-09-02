@@ -32,31 +32,29 @@ const ActiveUserFormat = styled.div`
   }
 `
 
-const LoginLogoutFormat = styled.div`
-  width: 100%;
-  height: 100%;
-  @media (min-width: ${ screenSize.medium }) {
-    grid-column-start: 1;
-    grid-column-end: 4;
-  }
-  @media (max-width: ${ screenSize.medium }) {
-    grid-column-start: 1;
-    grid-column-end: 3;
-  }
-  @media (max-width: ${ screenSize.small }) {
-    grid-column-start: 1;
-    grid-column-end: 2;
-  }
+const IpTypeFormat = styled.div`
+width: 100%;
+height: 100%;
+@media (min-width: ${ screenSize.medium }) {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+@media (max-width: ${ screenSize.medium }) {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+@media (max-width: ${ screenSize.small }) {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
 `
 
-const IpTypeFormat = styled.div`
+const LoginLogoutFormat = styled.div`
   width: 100%;
   height: 100%;
   @media (min-width: ${ screenSize.medium }) {
     grid-column-start: 4;
     grid-column-end: 7;
-    grid-row-start: 2;
-    grid-row-end: 3;
   }
   @media (max-width: ${ screenSize.medium }) {
     grid-column-start: 1;
