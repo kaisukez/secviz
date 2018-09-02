@@ -31,8 +31,8 @@ const SubNavigatorWrapper = styled.div`
   ${'' /* opacity: ${ props => props.display === 'block' ? 9 : 0 }; */}
   position: relative;
   left: ${ props => props.display === 'block' ? '0px' : `-${dashboardVar.sidebarWidthInt}px` };
-  transition: left 1s;
-  --webkit-transition: left 1s;
+  ${'' /* transition: left 1s;
+  --webkit-transition: left 1s; */}
 `
 
 const isActive = (page, matchingString) => {
