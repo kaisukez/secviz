@@ -12,46 +12,110 @@ import getLoginActivityData
 import getServerDistributionData
   from '../get-data/login-activity/getServerDistributionData'
 
+import screenSize from './styled/screenSize'
+
 const ActiveUserFormat = styled.div`
   width: 100%;
-  height: 300px;
-  grid-column-start: 1;
-  grid-column-end: 3;
+  height: 100%;
+  @media (min-width: ${ screenSize.medium }) {
+    grid-column-start: 1;
+    grid-column-end: 7;
+  }
+  @media (max-width: ${ screenSize.medium }) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  @media (max-width: ${ screenSize.small }) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
 `
 
 const LoginLogoutFormat = styled.div`
   width: 100%;
   height: 100%;
-  grid-column-start: 1;
-  grid-column-end: 3;
+  @media (min-width: ${ screenSize.medium }) {
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+  @media (max-width: ${ screenSize.medium }) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  @media (max-width: ${ screenSize.small }) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
 `
 
 const IpTypeFormat = styled.div`
   width: 100%;
   height: 100%;
-  grid-column-start: 1;
-  grid-column-end: 3;
+  @media (min-width: ${ screenSize.medium }) {
+    grid-column-start: 4;
+    grid-column-end: 7;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  @media (max-width: ${ screenSize.medium }) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  @media (max-width: ${ screenSize.small }) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
 `
 
 const IpRatioFormat = styled.div`
   width: 100%;
   height: 100%;
-  grid-column-start: 1;
-  grid-column-end: 2;
+  @media (min-width: ${ screenSize.medium }) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  @media (max-width: ${ screenSize.medium }) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  @media (max-width: ${ screenSize.small }) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
 `
 
 const LoginActivityFormat = styled.div`
   width: 100%;
   height: 100%;
-  grid-column-start: 2;
-  grid-column-end: 3;
+  @media (min-width: ${ screenSize.medium }) {
+    grid-column-start: 3;
+    grid-column-end: 5;
+  }
+  @media (max-width: ${ screenSize.medium }) {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+  @media (max-width: ${ screenSize.small }) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
 `
 
 const ServerDistributionFormat = styled.div`
   width: 100%;
   height: 100%;
-  grid-column-start: 1;
-  grid-column-end: 3;
+  @media (min-width: ${ screenSize.medium }) {
+    grid-column-start: 5;
+    grid-column-end: 7;
+  }
+  @media (max-width: ${ screenSize.medium }) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  @media (max-width: ${ screenSize.small }) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
 `
 
 const LoginActivity = props => {
