@@ -5,6 +5,12 @@ import StyledSidebar from './styled/Sidebar'
 
 const Navigator = styled.div`
   background-color: ${ props => props.active ? '#F7FCFF' : '#D6F0FF'}
+  height: 40px;
+  line-height: 40px;
+  padding-left: 10px;
+  cursor: pointer;
+  ${'' /* font-family: Arial; */}
+  border-bottom: 2px solid lightgrey;
 `
 
 const isActive = (page, matchingString) => {

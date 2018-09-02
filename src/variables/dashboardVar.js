@@ -1,6 +1,6 @@
 export default {
-  'navbarHeight': '70px',
+  'navbarHeight': '60px',
   'sidebarWidth': '250px',
-  'navbarHeightInt': 70,
+  'navbarHeightInt': 60,
   'sidebarWidthInt': 250,
 }
