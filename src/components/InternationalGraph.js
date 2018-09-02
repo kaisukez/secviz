@@ -7,6 +7,13 @@ import getInternationalGraphData
 
 import dashboardVar from '../variables/dashboardVar'
 
+const calWidth = windowWidth => {
+  if (!windowWidth)
+    return '100%'
+  const adjustedWidth = windowWidth - dashboardVar.sidebarWidthInt
+  return adjustedWidth
+}
+
 const InternationalGraph = props => {
   return (
     <GraphFrame>
@@ -14,7 +21,7 @@ const InternationalGraph = props => {
         option={ getInternationalGraphData() }
         style={{
           height: '100%',
-          width: props.width - dashboardVar.sidebarWidthInt
+          width: calWidth(props.width)
         }}
       />
     </GraphFrame>
