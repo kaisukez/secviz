@@ -7,10 +7,10 @@ const Navigator = styled.div`
   background-color: ${ props => props.active ? '#F7FCFF' : '#D6F0FF'}
   height: 40px;
   line-height: 40px;
-  padding-left: 10px;
+  padding-left: 20px;
   cursor: pointer;
   ${'' /* font-family: Arial; */}
-  border-bottom: 2px solid lightgrey;
+  border-bottom: 2px solid #F7FCFF;
 `
 
 const isActive = (page, matchingString) => {
