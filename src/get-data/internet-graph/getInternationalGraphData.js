@@ -17,11 +17,12 @@ var categories_list = [
 const getInternationalGraphData = () => ({
   title: {
       text: 'International Internet Graph',
-      // text: 'Domestic Graph'
+      left: 'center'
   },
   animationDurationUpdate: 1500,
   animationEasingUpdate: 'quinticInOut',
   legend: {
+    top: 30,
     data: categories_list
   },
   series : [
