@@ -18,7 +18,7 @@ const DomesticGraph = props => {
   return (
     <GraphFrame>
       <ReactEcharts
-        option={ getDomesticGraphData() }
+        option={ getDomesticGraphData(props.graphType) }
         style={{
           height: '100%',
           width: calWidth(props.width)

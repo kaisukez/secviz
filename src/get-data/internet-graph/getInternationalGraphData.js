@@ -14,7 +14,7 @@ var categories_list = [
   { name: 'IIG', itemStyle: { color: '#DEDB7A'} },
 ]
 
-const getInternationalGraphData = () => ({
+const getInternationalGraphData = graphType => ({
   title: {
       text: 'International Internet Graph',
       left: 'center'
@@ -28,7 +28,8 @@ const getInternationalGraphData = () => ({
   series : [
       {
           type: 'graph',
-          layout: 'circular',
+          layout: graphType,
+          // layout: 'circular',
           draggable: true,
           // progressiveThreshold: 700,
           categories: categories_list,
@@ -74,6 +75,9 @@ const getInternationalGraphData = () => ({
                   opacity: 0.24
               }
           },
+          force: {
+            repulsion: 500
+          }
       }
   ]
 })

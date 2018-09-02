@@ -17,7 +17,7 @@ var categories_list = [
   // { name: 'Gov.', itemStyle: { color: '#E6F075'} },
 ]
 
-const getDomesticGraphData = () => ({
+const getDomesticGraphData = graphType => ({
   title: {
       text: 'Domestic Internet Graph',
       left: 'center'
@@ -31,7 +31,8 @@ const getDomesticGraphData = () => ({
   series : [
       {
           type: 'graph',
-          layout: 'none',
+          layout: graphType,
+          // layout: 'none',
           draggable: true,
           // progressiveThreshold: 700,
           categories: categories_list,
@@ -78,6 +79,9 @@ const getDomesticGraphData = () => ({
                   opacity: 0.24
               }
           },
+          force: {
+            repulsion: 5500
+          }
       }
   ]
 })

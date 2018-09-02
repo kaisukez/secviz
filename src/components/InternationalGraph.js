@@ -18,7 +18,7 @@ const InternationalGraph = props => {
   return (
     <GraphFrame>
       <ReactEcharts
-        option={ getInternationalGraphData() }
+        option={ getInternationalGraphData(props.graphType) }
         style={{
           height: '100%',
           width: calWidth(props.width)

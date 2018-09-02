@@ -12,6 +12,8 @@ class Dashboard extends Component {
     super(props)
     this.state = {
       page: 'domestic-graph',
+      domesticGraphType: 'none',
+      internationalGraphType: 'circular'
     }
   }
 
@@ -31,15 +33,37 @@ class Dashboard extends Component {
   }
 
   changePage = page => {
-    this.setState({ page })
+    this.setState({
+      page,
+      domesticGraphType: 'none',
+      internationalGraphType: 'circular'
+    })
+  }
+
+  changeDomesticGraphType = graphType => {
+    this.setState({ domesticGraphType: graphType })
+  }
+
+  changeInternationalGraphType = graphType => {
+    this.setState({ 'internationalGraphType': graphType })
   }
 
   renderPage = width => {
     switch (this.state.page) {
       case 'domestic-graph':
-        return <DomesticGraph width={ width } />
+        return (
+          <DomesticGraph
+            width={ width }
+            graphType={ this.state.domesticGraphType }
+          />
+        )
       case 'international-graph':
-        return <InternationalGraph width={ width } />
+        return (
+          <InternationalGraph
+            width={ width }
+            graphType={ this.state.internationalGraphType }
+          />
+        )
       case 'login-activity':
         return <LoginActivity width={ width } />
       default:
@@ -54,6 +78,10 @@ class Dashboard extends Component {
         <Sidebar
           page={ this.state.page }
           changePage={ this.changePage }
+          domesticGraphType={ this.state.domesticGraphType }
+          internationalGraphType={ this.state.internationalGraphType }
+          changeDomesticGraphType={ this.changeDomesticGraphType }
+          changeInternationalGraphType={ this.changeInternationalGraphType }
         />
         { this.renderPage(this.state.width) }
       </DashboardFrame>
