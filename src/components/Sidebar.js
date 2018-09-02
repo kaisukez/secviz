@@ -3,24 +3,36 @@ import styled from 'styled-components'
 
 import StyledSidebar from './styled/Sidebar'
 
+import dashboardVar from '../variables/dashboardVar'
+
 const Navigator = styled.div`
-  background-color: ${ props => props.active ? '#F7FCFF' : '#D6F0FF'};
+  background-color: ${ props => props.active ? '#F7FCFF' : '#D6F0FF' };
   height: 40px;
   line-height: 40px;
   padding-left: 20px;
   cursor: pointer;
   border-bottom: 2px solid #F7FCFF;
+  ${'' /* transition: all 10s;
+  --webkit-transition: all 10s; */}
 `
 
 const SubNavigator = styled.div`
-  background-color: ${ props => props.active ? '#F7FCFF' : '#D6F0FF'};
+  background-color: ${ props => props.active ? '#F7FCFF' : '#D6F0FF' };
   height: 30px;
   line-height: 30px;
   padding-left: 20px;
   cursor: pointer;
   border-bottom: 2px solid #F7FCFF;
   border-left: 20px solid #F7FCFF;
-  display: ${ props => props.display };
+`
+
+const SubNavigatorWrapper = styled.div`
+  height: ${ props => props.display === 'block' ? 90 : 0 };
+  ${'' /* opacity: ${ props => props.display === 'block' ? 9 : 0 }; */}
+  position: relative;
+  left: ${ props => props.display === 'block' ? '0px' : `-${dashboardVar.sidebarWidthInt}px` };
+  transition: left 1s;
+  --webkit-transition: left 1s;
 `
 
 const isActive = (page, matchingString) => {
@@ -46,27 +58,26 @@ export default (props) => {
       >
         Domestic Internet Graph
       </Navigator>
-      <SubNavigator
-        display={ display(props.page, 'domestic-graph') }
-        active={ isActive(props.domesticGraphType, 'none') }
-        onClick={ () => props.changeDomesticGraphType('none') }
-      >
-        random position
-      </SubNavigator>
-      <SubNavigator
-        display={ display(props.page, 'domestic-graph') }
-        active={ isActive(props.domesticGraphType, 'circular') }
-        onClick={ () => props.changeDomesticGraphType('circular') }
-      >
-        circular
-      </SubNavigator>
-      <SubNavigator
-        display={ display(props.page, 'domestic-graph') }
-        active={ isActive(props.domesticGraphType, 'force') }
-        onClick={ () => props.changeDomesticGraphType('force') }
-      >
-        force
-      </SubNavigator>
+      <SubNavigatorWrapper display={ display(props.page, 'domestic-graph') }>
+        <SubNavigator
+          active={ isActive(props.domesticGraphType, 'none') }
+          onClick={ () => props.changeDomesticGraphType('none') }
+        >
+          random position
+        </SubNavigator>
+        <SubNavigator
+          active={ isActive(props.domesticGraphType, 'circular') }
+          onClick={ () => props.changeDomesticGraphType('circular') }
+        >
+          circular
+        </SubNavigator>
+        <SubNavigator
+          active={ isActive(props.domesticGraphType, 'force') }
+          onClick={ () => props.changeDomesticGraphType('force') }
+        >
+          force
+        </SubNavigator>
+      </SubNavigatorWrapper>
 
       <Navigator
         onClick={ () => props.changePage('international-graph') }
@@ -74,27 +85,26 @@ export default (props) => {
       >
         International Internet Graph
       </Navigator>
-      <SubNavigator
-        display={ display(props.page, 'international-graph') }
-        active={ isActive(props.internationalGraphType, 'none') }
-        onClick={ () => props.changeInternationalGraphType('none') }
-      >
-        random position
-      </SubNavigator>
-      <SubNavigator
-        display={ display(props.page, 'international-graph') }
-        active={ isActive(props.internationalGraphType, 'circular') }
-        onClick={ () => props.changeInternationalGraphType('circular') }
-      >
-        circular
-      </SubNavigator>
-      <SubNavigator
-        display={ display(props.page, 'international-graph') }
-        active={ isActive(props.internationalGraphType, 'force') }
-        onClick={ () => props.changeInternationalGraphType('force') }
-      >
-        force
-      </SubNavigator>
+      <SubNavigatorWrapper display={ display(props.page, 'international-graph') }>
+        <SubNavigator
+          active={ isActive(props.internationalGraphType, 'none') }
+          onClick={ () => props.changeInternationalGraphType('none') }
+        >
+          random position
+        </SubNavigator>
+        <SubNavigator
+          active={ isActive(props.internationalGraphType, 'circular') }
+          onClick={ () => props.changeInternationalGraphType('circular') }
+        >
+          circular
+        </SubNavigator>
+        <SubNavigator
+          active={ isActive(props.internationalGraphType, 'force') }
+          onClick={ () => props.changeInternationalGraphType('force') }
+        >
+          force
+        </SubNavigator>
+      </SubNavigatorWrapper>
 
       <Navigator
         onClick={ () => props.changePage('login-activity') }
