@@ -10,17 +10,18 @@ const getLoginActivityData = () => ({
     left: 'center',
     text: 'Login Activity'
   },
+  tooltip: {},
   series: {
     type: 'pie',
-    radius: [30, 110],
-    roseType: 'radius',
+    radius: [50, 110],
     data: [
       { name: 'login', value: loginValue },
+      { name: 'timeout', value: timeoutValue },
       { name: 're-login', value: reLoginValue },
       { name: 'logout', value: logoutValue },
-      { name: 'timeout', value: timeoutValue },
     ]
-  }
+  },
+  color: ['#6733AD', '#FE3A3A', '#2ECB2E', '#FEEC3A']
 })
 
 export default getLoginActivityData

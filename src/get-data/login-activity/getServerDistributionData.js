@@ -3,12 +3,12 @@ import serverDistribution from '../../data/login-activity/server-distribution'
 const getServerDistributionData = () => ({
   title: {
     left: 'center',
-    text: 'Server Distribution'
+    text: 'Server Load Distribution'
   },
+  tooltip: {},
   series: {
     type: 'pie',
-    radius: [30, 110],
-    roseType: 'radius',
+    radius: [50, 110],
     data: [
       { name: "158.108.218.201", value: serverDistribution["158.108.218.201"] },
       { name: "158.108.218.202", value: serverDistribution["158.108.218.202"] },
@@ -23,7 +23,11 @@ const getServerDistributionData = () => ({
       { name: "158.108.218.211", value: serverDistribution["158.108.218.211"] },
       { name: "158.108.218.212", value: serverDistribution["158.108.218.212"] },
     ]
-  }
+  },
+  color: [
+    '#AD28A2', '#6733AD', '#3D40B1', '#2E71A4', '#28B16F', '#83E234',
+    '#D5F638', '#FEEC3A', '#FECD3A', '#FEA93A', '#FE723A', '#E2346C'
+  ]
 })
 
 export default getServerDistributionData
