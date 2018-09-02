@@ -11,24 +11,39 @@ class Dashboard extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      page: 'domestic-graph'
+      page: 'domestic-graph',
     }
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.updateWidth)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWidth)
+  }
+
+  updateWidth = () => {
+    const width = window.innerWidth
+    // console.log('width:', width)
+    this.setState({ width })
+    // this.setState({ width: $(window).width(), height: $(window).height() })
   }
 
   changePage = page => {
     this.setState({ page })
   }
 
-  renderPage = () => {
+  renderPage = width => {
     switch (this.state.page) {
       case 'domestic-graph':
-        return <DomesticGraph />
+        return <DomesticGraph width={ width } />
       case 'international-graph':
-        return <InternationalGraph />
+        return <InternationalGraph width={ width } />
       case 'login-activity':
-        return <LoginActivity />
+        return <LoginActivity width={ width } />
       default:
-        return <DomesticGraph />
+        return <DomesticGraph width={ width } />
     }
   }
 
@@ -40,7 +55,7 @@ class Dashboard extends Component {
           page={ this.state.page }
           changePage={ this.changePage }
         />
-        { this.renderPage() }
+        { this.renderPage(this.state.width) }
       </DashboardFrame>
     )
   }

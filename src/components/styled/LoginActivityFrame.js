@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import screenSize from './screenSize'
+import screenSize from '../../variables/screenSize'
 
 const LoginActivityFrame = styled.div`
   background-color: #FEFEFE;

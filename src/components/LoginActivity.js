@@ -12,7 +12,8 @@ import getLoginActivityData
 import getServerDistributionData
   from '../get-data/login-activity/getServerDistributionData'
 
-import screenSize from './styled/screenSize'
+import screenSize from '../variables/screenSize'
+import dashboardVar from '../variables/dashboardVar'
 
 const ActiveUserFormat = styled.div`
   width: 100%;
@@ -118,43 +119,103 @@ const ServerDistributionFormat = styled.div`
   }
 `
 
+const calWidthActiveUser = windowWidth => {
+  if (!windowWidth)
+    return '100%'
+  const adjustedWidth = windowWidth - dashboardVar.sidebarWidthInt
+  return adjustedWidth
+}
+
+const calWidthIpTypeIpLoginLogout = windowWidth => {
+  if (!windowWidth)
+    return '100%'
+  const adjustedWidth = windowWidth - dashboardVar.sidebarWidthInt
+  // console.log(windowWidth, screenSize.mediumInt)
+  if (windowWidth <= screenSize.mediumInt)
+    return adjustedWidth
+  else
+    return adjustedWidth / 2
+}
+
+const calWidthIpRatioLoginActivity = windowWidth => {
+  if (!windowWidth)
+    return '100%'
+  const adjustedWidth = windowWidth - dashboardVar.sidebarWidthInt
+  if (windowWidth <= screenSize.smallInt)
+    return adjustedWidth
+  else if (windowWidth <= screenSize.mediumInt)
+    return adjustedWidth / 2
+  else
+    return adjustedWidth / 3
+}
+
+const calWidthServerDistribution = windowWidth => {
+  if (!windowWidth)
+    return '100%'
+  const adjustedWidth = windowWidth - dashboardVar.sidebarWidthInt
+  if (windowWidth <= screenSize.smallInt)
+    return adjustedWidth
+  else if (windowWidth <= screenSize.mediumInt)
+    return adjustedWidth
+  else
+    return adjustedWidth / 3
+}
+
 const LoginActivity = props => {
   return (
     <LoginActivityFrame>
       <ActiveUserFormat>
         <ReactEcharts
           option={ getUserData() }
-          style={ { height: '100%' } }
+          style={{
+            height: '100%',
+            width: calWidthActiveUser(props.width)
+          }}
         />
       </ActiveUserFormat>
       <IpTypeFormat>
         <ReactEcharts
           option={ getIpTypeData() }
-          style={ { height: '100%' } }
+          style={{
+            height: '100%',
+            width: calWidthIpTypeIpLoginLogout(props.width)
+          }}
         />
       </IpTypeFormat>
       <LoginLogoutFormat>
         <ReactEcharts
           option={ getLoginLogoutData() }
-          style={ { height: '100%' } }
+          style={{
+            height: '100%',
+            width: calWidthIpTypeIpLoginLogout(props.width)
+          }}
         />
       </LoginLogoutFormat>
       <IpRatioFormat>
         <ReactEcharts
           option={ getIpRatioData() }
-          style={ { height: '100%' } }
+          style={{
+            height: '100%',
+            width: calWidthIpRatioLoginActivity(props.width)
+          }}
         />
       </IpRatioFormat>
       <LoginActivityFormat>
         <ReactEcharts
           option={ getLoginActivityData() }
-          style={ { height: '100%' } }
+          style={{
+            height: '100%',
+            width: calWidthIpRatioLoginActivity(props.width)
+          }}
         />
       </LoginActivityFormat>
       <ServerDistributionFormat>
         <ReactEcharts
           option={ getServerDistributionData() }
-          style={ { height: '100%' } }
+          style={{
+            height: '100%',
+            width: calWidthServerDistribution(props.width)
+          }}
         />
       </ServerDistributionFormat>
     </LoginActivityFrame>

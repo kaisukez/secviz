@@ -35,7 +35,7 @@ const getDomesticGraphData = () => ({
           // progressiveThreshold: 700,
           categories: categories_list,
           data: DomesticExchage.nodes.map(function (node) {
-            console.log(node.colorByType)
+            // console.log(node.colorByType)
               return {
                   x: node.x,
                   y: node.y,

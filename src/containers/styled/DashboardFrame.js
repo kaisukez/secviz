@@ -1,9 +1,10 @@
 import styled from 'styled-components'
+import dashboardVar from '../../variables/dashboardVar'
 
 const DashboardFrame = styled.div`
   display: grid;
-  grid-template-columns: 250px auto;
-  grid-template-rows: 70px auto;
+  grid-template-columns: ${ dashboardVar.sidebarWidth } auto;
+  grid-template-rows: ${ dashboardVar.navbarHeight } auto;
   height: 100vh;
 `
 
