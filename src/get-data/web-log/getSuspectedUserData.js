@@ -13,7 +13,7 @@ const getSuspectedUserData = () => ({
       value: item.count
     }))
   },
-  color: ['#7A9A5D', '#7D7B71', '#FEFDF7', '#8FD3CF', '#538E82']
+  color: ['#7A9A5D', '#7D7B71', '#F0867E', '#8FD3CF', '#538E82']
 })
 
 export default getSuspectedUserData
