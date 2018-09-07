@@ -127,6 +127,12 @@ export default (props) => {
           suspected user
         </SubNavigator>
         <SubNavigator
+          active={ isActive(props.webLogSector, 'timeline-connectivity') }
+          onClick={ () => props.changeWebLogSector('timeline-connectivity') }
+        >
+          timeline connectivity
+        </SubNavigator>
+        <SubNavigator
           active={ isActive(props.webLogSector, 'most-request-host-name') }
           onClick={ () => props.changeWebLogSector('most-request-host-name') }
         >
