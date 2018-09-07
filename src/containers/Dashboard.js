@@ -7,6 +7,7 @@ import LoginActivity from '../components/LoginActivity'
 import InternationalGraph from '../components/InternationalGraph'
 import DomesticGraph from '../components/DomesticGraph'
 import SuspectedUser from '../components/SuspectedUser'
+import TimelineConnectivity from '../components/TimelineConnectivity'
 
 class Dashboard extends Component {
   constructor(props) {
@@ -76,6 +77,8 @@ class Dashboard extends Component {
         switch (this.state.webLogSector) {
           case 'suspected-user':
             return <SuspectedUser width={ width }/>
+          case 'timeline-connectivity':
+            return <TimelineConnectivity width={ width } />
         }
       default:
         return <DomesticGraph width={ width } />
