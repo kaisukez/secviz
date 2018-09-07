@@ -32,9 +32,8 @@ class Dashboard extends Component {
 
   updateWidth = () => {
     const width = window.innerWidth
-    // console.log('width:', width)
-    this.setState({ width })
-    // this.setState({ width: $(window).width(), height: $(window).height() })
+    const height = window.innerHeight
+    this.setState({ width, height })
   }
 
   changePage = page => {
@@ -57,7 +56,7 @@ class Dashboard extends Component {
     this.setState({ webLogSector: sector })
   }
 
-  renderPage = width => {
+  renderPage = (width, height) => {
     switch (this.state.page) {
       case 'domestic-graph':
         return (
@@ -82,9 +81,9 @@ class Dashboard extends Component {
           case 'timeline-connectivity':
             return <TimelineConnectivity width={ width } />
           case 'most-request-host-name':
-            return <MostRequestHostName width={ width } />
+            return <MostRequestHostName width={ width } height={ height }/>
           case 'most-request-file-type':
-            return <MostRequestFiletype width={ width } />
+            return <MostRequestFiletype width={ width } height={ height } />
           default:
             return <SuspectedUser width={ width } />
         }
@@ -107,7 +106,7 @@ class Dashboard extends Component {
           webLogSector={ this.state.webLogSector }
           changeWebLogSector={ this.changeWebLogSector }
         />
-        { this.renderPage(this.state.width) }
+        { this.renderPage(this.state.width, this.state.height) }
       </DashboardFrame>
     )
   }

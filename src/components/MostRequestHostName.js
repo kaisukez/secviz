@@ -20,20 +20,30 @@ const calWidth = windowWidth => {
     return adjustedWidth / 2
 }
 
+const calHeight = (windowWidth, windowHeight) => {
+  if (!windowWidth || !windowHeight)
+    return '100%'
+  const adjustedHeight = windowHeight - dashboardVar.navbarHeightInt
+  if (windowWidth <= screenSize.suspectedUserBreakPointInt)
+    return adjustedHeight / 2
+  else
+    return adjustedHeight
+}
+
 const MostRequestHostName = props => {
   return (
     <MostRequestFrame>
       <ReactEcharts
         option={ getHostNameEgressData() }
         style={{
-          height: '100%',
+          height: calHeight(props.width, props.height),
           width: calWidth(props.width)
         }}
       />
       <ReactEcharts
         option={ getHostNameIngressData() }
         style={{
-          height: '100%',
+          height: calHeight(props.width, props.height),
           width: calWidth(props.width)
         }}
       />
