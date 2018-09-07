@@ -13,7 +13,8 @@ class Dashboard extends Component {
     this.state = {
       page: 'domestic-graph',
       domesticGraphType: 'none',
-      internationalGraphType: 'circular'
+      internationalGraphType: 'circular',
+      webLogSector: 'suspected-user'
     }
   }
 
@@ -45,7 +46,11 @@ class Dashboard extends Component {
   }
 
   changeInternationalGraphType = graphType => {
-    this.setState({ 'internationalGraphType': graphType })
+    this.setState({ internationalGraphType: graphType })
+  }
+
+  changeWebLogSector = sector => {
+    this.setState({ webLogSector: sector })
   }
 
   renderPage = width => {
@@ -82,6 +87,8 @@ class Dashboard extends Component {
           internationalGraphType={ this.state.internationalGraphType }
           changeDomesticGraphType={ this.changeDomesticGraphType }
           changeInternationalGraphType={ this.changeInternationalGraphType }
+          webLogSector={ this.state.webLogSector }
+          changeWebLogSector={ this.changeWebLogSector }
         />
         { this.renderPage(this.state.width) }
       </DashboardFrame>

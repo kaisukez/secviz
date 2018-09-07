@@ -112,6 +112,34 @@ export default (props) => {
       >
         Login Activity
       </Navigator>
+
+      <Navigator
+        onClick={ () => props.changePage('web-log') }
+        active={ isActive(props.page, 'web-log') }
+      >
+        Web Log
+      </Navigator>
+      <SubNavigatorWrapper display={ display(props.page, 'web-log') }>
+        <SubNavigator
+          active={ isActive(props.webLogSector, 'suspected-user') }
+          onClick={ () => props.changeWebLogSector('suspected-user') }
+        >
+          suspected user
+        </SubNavigator>
+        <SubNavigator
+          active={ isActive(props.webLogSector, 'most-request-host-name') }
+          onClick={ () => props.changeWebLogSector('most-request-host-name') }
+        >
+          most request host name
+        </SubNavigator>
+        <SubNavigator
+          active={ isActive(props.webLogSector, 'most-request-file-type') }
+          onClick={ () => props.changeWebLogSector('most-request-file-type') }
+        >
+          most request file type
+        </SubNavigator>
+      </SubNavigatorWrapper>
+
     </StyledSidebar>
   )
 }
