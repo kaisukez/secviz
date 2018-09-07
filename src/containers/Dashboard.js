@@ -6,6 +6,7 @@ import Sidebar from '../components/Sidebar'
 import LoginActivity from '../components/LoginActivity'
 import InternationalGraph from '../components/InternationalGraph'
 import DomesticGraph from '../components/DomesticGraph'
+import SuspectedUser from '../components/SuspectedUser'
 
 class Dashboard extends Component {
   constructor(props) {
@@ -71,6 +72,11 @@ class Dashboard extends Component {
         )
       case 'login-activity':
         return <LoginActivity width={ width } />
+      case 'web-log':
+        switch (this.state.webLogSector) {
+          case 'suspected-user':
+            return <SuspectedUser width={ width }/>
+        }
       default:
         return <DomesticGraph width={ width } />
     }

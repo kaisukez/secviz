@@ -1,7 +1,14 @@
+const smallInt = 1090
+const small = smallInt + 'px'
+
+const mediumInt = 1660
+const medium = mediumInt + 'px'
+
+const suspectedUserBreakPointInt = 1350
+const suspectedUserBreakPoint = suspectedUserBreakPointInt + 'px'
+
 export default {
-  small: '1090px',
-  medium: '1660px',
-  large: '',
-  smallInt: 1090,
-  mediumInt: 1660,
+  smallInt, small,
+  mediumInt, medium,
+  suspectedUserBreakPointInt, suspectedUserBreakPoint
 }

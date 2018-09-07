@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const LoginActivityFrame = styled.div`
+const GraphFrame = styled.div`
   background-color: #FEFEFE;
   width: 100%;
   height: 100%;
@@ -10,4 +10,4 @@ const LoginActivityFrame = styled.div`
   grid-row-end: 3;
 `
 
-export default LoginActivityFrame
+export default GraphFrame

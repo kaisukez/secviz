@@ -1,10 +1,11 @@
-import suspectedUser from '../../data/web-log/suspec_users_3.1'
+import suspectedUser from '../../data/web-log/suspect_users_3.1'
 
 const getSuspectedUserData = () => ({
   title: {
     left: 'center',
-    text: 'Requests Per Minute'
+    text: 'Requests Per User at 3:07'
   },
+  tooltip: {},
   series: {
     type: 'treemap',
     data: suspectedUser.map(item => ({
