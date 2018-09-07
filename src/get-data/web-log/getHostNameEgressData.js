@@ -5,6 +5,7 @@ const getHostNameEgressData = () => ({
     left: 'center',
     text: 'Most Request Host Name for Egress'
   },
+  tooltip: {},
   series: {
     type: 'treemap',
     data: hostNameEgress.map(item => ({
@@ -12,7 +13,7 @@ const getHostNameEgressData = () => ({
       value: item[0]
     }))
   },
-  // color: ['#31ABD4']
+  color: ['#142845', '#20767D', '#98BE94', '#D6D285', '#B18D5D']
 })
 
 export default getHostNameEgressData

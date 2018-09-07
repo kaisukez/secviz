@@ -8,6 +8,8 @@ import InternationalGraph from '../components/InternationalGraph'
 import DomesticGraph from '../components/DomesticGraph'
 import SuspectedUser from '../components/SuspectedUser'
 import TimelineConnectivity from '../components/TimelineConnectivity'
+import MostRequestHostName from '../components/MostRequestHostName'
+import MostRequestFiletype from '../components/MostRequestFiletype'
 
 class Dashboard extends Component {
   constructor(props) {
@@ -79,6 +81,12 @@ class Dashboard extends Component {
             return <SuspectedUser width={ width }/>
           case 'timeline-connectivity':
             return <TimelineConnectivity width={ width } />
+          case 'most-request-host-name':
+            return <MostRequestHostName width={ width } />
+          case 'most-request-file-type':
+            return <MostRequestFiletype width={ width } />
+          default:
+            return <SuspectedUser width={ width } />
         }
       default:
         return <DomesticGraph width={ width } />

@@ -5,6 +5,7 @@ const getHostNameIngressData = () => ({
     left: 'center',
     text: 'Most Request Host Name for Ingress'
   },
+  tooltip: {},
   series: {
     type: 'treemap',
     data: hostNameIngress.map(item => ({
@@ -12,7 +13,7 @@ const getHostNameIngressData = () => ({
       value: item[0]
     }))
   },
-  // color: ['#31ABD4']
+  color: ['#95A5BE', '#7C4D7D', '#2E3748', '#6981BD', '#A0AEDB']
 })
 
 export default getHostNameIngressData

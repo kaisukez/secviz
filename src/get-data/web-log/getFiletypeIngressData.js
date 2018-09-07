@@ -5,6 +5,7 @@ const getFiletypeIngressData = () => ({
     left: 'center',
     text: 'Most Request File Type for Ingress'
   },
+  tooltip: {},
   series: {
     type: 'treemap',
     data: filetypeIngress.map(item => ({
@@ -12,7 +13,7 @@ const getFiletypeIngressData = () => ({
       value: item[0]
     }))
   },
-  // color: ['#31ABD4']
+  color: ['#95A5BE', '#7C4D7D', '#2E3748', '#6981BD', '#A0AEDB']
 })
 
 export default getFiletypeIngressData

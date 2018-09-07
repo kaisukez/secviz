@@ -5,6 +5,7 @@ const getFiletypeEgressData = () => ({
     left: 'center',
     text: 'Most Request File Type for Egress'
   },
+  tooltip: {},
   series: {
     type: 'treemap',
     data: filetypeEgress.map(item => ({
@@ -12,7 +13,7 @@ const getFiletypeEgressData = () => ({
       value: item[0]
     }))
   },
-  // color: ['#31ABD4']
+  color: ['#142845', '#20767D', '#98BE94', '#D6D285', '#B18D5D']
 })
 
 export default getFiletypeEgressData
