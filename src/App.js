@@ -7,11 +7,12 @@ import Dashboard from './containers/Dashboard'
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
-        <Switch>
-          <Route path='/' component={Dashboard} />
-        </Switch>
-      </BrowserRouter>
+      // <BrowserRouter>
+      //   <Switch>
+      //     <Route path='/' component={Dashboard} />
+      //   </Switch>
+      // </BrowserRouter>
+      <Dashboard />
     );
   }
 }
