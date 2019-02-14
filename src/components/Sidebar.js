@@ -113,7 +113,7 @@ export default (props) => {
         Login Activity
       </Navigator>
 
-      <Navigator
+      {/* <Navigator
         onClick={ () => props.changePage('web-log') }
         active={ isActive(props.page, 'web-log') }
       >
@@ -144,7 +144,7 @@ export default (props) => {
         >
           most request file type
         </SubNavigator>
-      </SubNavigatorWrapper>
+      </SubNavigatorWrapper> */}
 
     </StyledSidebar>
   )

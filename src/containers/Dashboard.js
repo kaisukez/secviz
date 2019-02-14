@@ -74,21 +74,21 @@ class Dashboard extends Component {
         )
       case 'login-activity':
         return <LoginActivity width={ width } />
-      case 'web-log':
-        switch (this.state.webLogSector) {
-          case 'suspected-user':
-            return <SuspectedUser width={ width }/>
-          case 'timeline-connectivity':
-            return <TimelineConnectivity width={ width } />
-          case 'most-request-host-name':
-            return <MostRequestHostName width={ width } height={ height }/>
-          case 'most-request-file-type':
-            return <MostRequestFiletype width={ width } height={ height } />
-          default:
-            return <SuspectedUser width={ width } />
-        }
-      default:
-        return <DomesticGraph width={ width } />
+      // case 'web-log':
+      //   switch (this.state.webLogSector) {
+      //     case 'suspected-user':
+      //       return <SuspectedUser width={ width }/>
+      //     case 'timeline-connectivity':
+      //       return <TimelineConnectivity width={ width } />
+      //     case 'most-request-host-name':
+      //       return <MostRequestHostName width={ width } height={ height }/>
+      //     case 'most-request-file-type':
+      //       return <MostRequestFiletype width={ width } height={ height } />
+      //     default:
+      //       return <SuspectedUser width={ width } />
+      //   }
+      // default:
+      //   return <DomesticGraph width={ width } />
     }
   }
 
