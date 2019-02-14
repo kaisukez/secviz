@@ -6,7 +6,7 @@ import Brand from './styled/Brand'
 export default (props) => {
   return (
     <StyledNavbar>
-      <Brand>secviz portfolio</Brand>
+      <Brand>secviz</Brand>
     </StyledNavbar>
   )
 }
