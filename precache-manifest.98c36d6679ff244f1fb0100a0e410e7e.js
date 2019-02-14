@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/secviz/static/js/2.337a454b.chunk.js"
   },
   {
-    "revision": "5af37e59d9c3b16a583c3c01e02ad0aa",
+    "revision": "88da161fc387adf957743c587ed66d0f",
     "url": "/secviz/index.html"
   }
 ];
