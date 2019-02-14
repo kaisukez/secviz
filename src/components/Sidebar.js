@@ -56,7 +56,7 @@ export default (props) => {
         onClick={ () => props.changePage('domestic-graph') }
         active={ isActive(props.page, 'domestic-graph') }
       >
-        Domestic Internet Graph
+        Domestic Internet Map
       </Navigator>
       <SubNavigatorWrapper display={ display(props.page, 'domestic-graph') }>
         <SubNavigator
@@ -83,7 +83,7 @@ export default (props) => {
         onClick={ () => props.changePage('international-graph') }
         active={ isActive(props.page, 'international-graph') }
       >
-        International Internet Graph
+        International Internet Map
       </Navigator>
       <SubNavigatorWrapper display={ display(props.page, 'international-graph') }>
         <SubNavigator
@@ -110,7 +110,7 @@ export default (props) => {
         onClick={ () => props.changePage('login-activity') }
         active={ isActive(props.page, 'login-activity') }
       >
-        Login Activity
+        Login Log
       </Navigator>
 
       {/* <Navigator

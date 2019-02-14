@@ -16,7 +16,7 @@ var categories_list = [
 
 const getInternationalGraphData = graphType => ({
   title: {
-      text: 'International Internet Graph',
+      text: 'International Internet Map',
       left: 'center'
   },
   animationDurationUpdate: 1500,

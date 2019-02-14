@@ -19,7 +19,7 @@ var categories_list = [
 
 const getDomesticGraphData = graphType => ({
   title: {
-      text: 'Domestic Internet Graph',
+      text: 'Domestic Internet Map',
       left: 'center'
   },
   animationDurationUpdate: 1500,
