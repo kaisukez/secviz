@@ -6,10 +6,10 @@ import Sidebar from '../components/Sidebar'
 import LoginActivity from '../components/LoginActivity'
 import InternationalGraph from '../components/InternationalGraph'
 import DomesticGraph from '../components/DomesticGraph'
-import SuspectedUser from '../components/SuspectedUser'
-import TimelineConnectivity from '../components/TimelineConnectivity'
-import MostRequestHostName from '../components/MostRequestHostName'
-import MostRequestFiletype from '../components/MostRequestFiletype'
+// import SuspectedUser from '../components/SuspectedUser'
+// import TimelineConnectivity from '../components/TimelineConnectivity'
+// import MostRequestHostName from '../components/MostRequestHostName'
+// import MostRequestFiletype from '../components/MostRequestFiletype'
 
 class Dashboard extends Component {
   constructor(props) {
@@ -87,8 +87,8 @@ class Dashboard extends Component {
       //     default:
       //       return <SuspectedUser width={ width } />
       //   }
-      // default:
-      //   return <DomesticGraph width={ width } />
+      default:
+        return <DomesticGraph width={ width } />
     }
   }
 
