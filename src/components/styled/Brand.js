@@ -7,6 +7,7 @@ const Brand = styled.h2`
   font-size: 18px;
   line-height: 60px;
   margin: 0;
+  display: inline;
 `
 
 export default Brand
